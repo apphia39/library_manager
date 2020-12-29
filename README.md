@@ -9,12 +9,7 @@ In this project, you are going to develop a library manager program. You need to
 #### R1. 
 서버 프로그램(Server.java)는 "books.txt"라는 이름의 파일에 접근한다. "books.txt"는 library에 있는 모든 책들이 기록된 텍스트 파일이다. "books.txt" 파일의 각 줄에는 title, author, borrower의 userID가 포함된 book entry가 입력되어 있고, 이들은 각각 '\t'로 구분되어있다. tab 문자는 title, author, borrower에는 포함되지 않고, 오직 이들을 구분할 때만 쓰인다고 가정한다. 책들은 title에 대해 case-insensitive한 알파벳 순으로 정렬되어있다. "books.txt"의 예시는 다음과 같다.<br>
 
-<books.txt>  <br>
-A Promised Land Barack Obama  -  <br>
-Green Lights  Matthew McConaughey  -  <br>
-Harry Potter and the Sorcerer's Stone J.K. Rowling  trump  <br>
-How to Catch a Unicorn  Adam Wallace joebiden  <br>
-I Love You to the Moon and Back Amelia Hepworth -  <br>
+![image](https://user-images.githubusercontent.com/67676029/103265511-1993e180-49f1-11eb-9875-16d41a2dfe8d.png)
 
 첫 줄에서, "A Promised Land"는 책의 title이다. 그 다음, tab 문자 이후에 오는 "Barack Obama"는 이 책의 author이다. 그 다음, tab 문자 이후에 오는 "trump"는 도서관에서 이 책을 빌린 borrower이다.
 
@@ -88,21 +83,7 @@ prompt "add-title> " 또는 "add-author> "에 대해, 입력이 없거나 공백
 
 책의 title과 author는 case-insensitive하다. 예를 들어, "A Promised Land"와 "a promised land"는 같은 책으로 취급한다. 따라서 이미 list에는 "A Promised Land"라는 책이 존재하므로, "a promised land"라는 책은 add할 수 없다.
 
-ex)<br>
-minseon>> add<br>
-add-title> Trump: The Art of the Deal<br>
-add-author> Donald J. Trump<br>
-A new book added to the list.<br>
-minseon>> add<br>
-add-title> Trump: The Art of the Deal<br>
-add-author> Donald J. Trump<br>
-The book already exists in the list.<br>
-minseon>> add<br>
-add-title><br>
-trump>> add<br>
-add-title> Becoming<br>
-add-author><br>
-minseon>><br>
+![image](https://user-images.githubusercontent.com/67676029/103265562-3d572780-49f1-11eb-92c2-1d279d18e0f3.png)
 
 ### ※ command가 "borrow"일 경우, 클라이언트는 prompt를 통해 title을 입력받는다.
 #### R10. 
@@ -114,16 +95,9 @@ minseon>><br>
 #### R12. 
 prompt "borrow-title>"에 대해 아무런 입력이 없거나, 공백이 입력될 경우, 해당 명령어는 무시되고 main prompt로 돌아간다.
 
-ex)<br>
-minseon>> borrow<br>
-borrow-title> a promised land<br>
-You borrowed a book. – A Promised Land<br>
-minseon>> borrow<br>
-borrow-title> a promised land<br>
-The book is not available.<br>
-minseon>> borrow<br>
-borrow-title><br>
-minseon>><br>
+![image](https://user-images.githubusercontent.com/67676029/103265625-595ac900-49f1-11eb-8bd9-536e85b62656.png)<br>
+![image](https://user-images.githubusercontent.com/67676029/103265635-5eb81380-49f1-11eb-8e87-2b1fb8ac12bf.png)
+
 
 ### ※ command가 "return"일 경우, 클라이언트는 prompt를 통해 title을 입력받는다.
 #### R13. 
@@ -135,27 +109,13 @@ minseon>><br>
 #### R15. 
 prompt "return-title>"에 대해 user가 아무런 입력을 하지 않았거나, 공백을 입력했을 경우, 해당 명령어는 무시되고, main prompt로 돌아간다.
 
-ex)<br>
-trump>> return<br>
-return-title> a promised land<br>
-You returned a book. – A Promised Land<br>
-trump>> return<br>
-return-title> a promised land<br>
-You did not borrow the book.<br>
-trump>> return<br>
-return-title><br>
-trump>> <br>
-
+![image](https://user-images.githubusercontent.com/67676029/103265663-6bd50280-49f1-11eb-85ae-6c25834d23f7.png)
 
 ### ※ command가 "info"일 경우, 해당 user가 현재 대여 중인 책의 목록을 출력한다. 
 #### R16. 
 이는 서버로의 요청을 통해 이루어질 수 있다. 출력 예시는 다음과 같다. (책 목록은 title에 대해 case-insensitive한 알파벳 순으로 정렬되어있다.)
 
-ex)<br>
-minseon>> info<br>
-You are currently borrowing 1 books:
-1. A Promised Land, Barack Obama
-minseon>> <br>
+![image](https://user-images.githubusercontent.com/67676029/103265669-74c5d400-49f1-11eb-9064-016a25310368.png)
 
 ### ※ command가 "search"일 경우, user는 prompt를 통해 string pattern을 입력받는다. 
 #### R17.
@@ -167,18 +127,7 @@ minseon>> <br>
 #### R19. 
 prompt "search-string>"에 대해 user가 아무런 입력도 하지 않을 경우(바로 enter를 입력한 경우) command는 무시되고, main prompt로 돌아간다.
 
-ex)<br>
-minseon>> search<br>
-search-string> ab<br>
-Search string must be longer than 2 characters.<br>
-search-string> the<br>
-Your search matched 3 results.
-1. Green Lights, Matthew McConaughey
-2. Harry Potter and the Sorcerer's Stone, J.K. Rowling
-3. I Love You to the Moon and Back, Amelia Hepworth
-minseon>> search<br>
-search-string><br>
-minseon>><br>
+![image](https://user-images.githubusercontent.com/67676029/103265701-89a26780-49f1-11eb-9a42-d0a98a4b784f.png)
 
 ### ※ R20. command가 "exit"일 경우, 해당 client는 프로그램을 종료한다.
 
