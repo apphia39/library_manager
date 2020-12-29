@@ -9,7 +9,12 @@ In this project, you are going to develop a library manager program. You need to
 #### R1. 
 서버 프로그램(Server.java)는 "books.txt"라는 이름의 파일에 접근한다. "books.txt"는 library에 있는 모든 책들이 기록된 텍스트 파일이다. "books.txt" 파일의 각 줄에는 title, author, borrower의 userID가 포함된 book entry가 입력되어 있고, 이들은 각각 '\t'로 구분되어있다. tab 문자는 title, author, borrower에는 포함되지 않고, 오직 이들을 구분할 때만 쓰인다고 가정한다. 책들은 title에 대해 case-insensitive한 알파벳 순으로 정렬되어있다. "books.txt"의 예시는 다음과 같다.<br>
 
-![image](https://user-images.githubusercontent.com/67676029/103265511-1993e180-49f1-11eb-9875-16d41a2dfe8d.png)
+<books.txt><br>
+A Promised Land Barack Obama  trump<br>
+Green Lights  Matthew McConaughey  -<br>
+Harry Potter and the Sorcerer's Stone J.K. Rowling  trump<br>
+How to Catch a Unicorn  Adam Wallace  joebiden<br>
+I Love You to the Moon and Back Amelia Hepworth -<br>
 
 첫 줄에서, "A Promised Land"는 책의 title이다. 그 다음, tab 문자 이후에 오는 "Barack Obama"는 이 책의 author이다. 그 다음, tab 문자 이후에 오는 "trump"는 도서관에서 이 책을 빌린 borrower이다.
 
@@ -96,7 +101,7 @@ prompt "add-title> " 또는 "add-author> "에 대해, 입력이 없거나 공백
 prompt "borrow-title>"에 대해 아무런 입력이 없거나, 공백이 입력될 경우, 해당 명령어는 무시되고 main prompt로 돌아간다.
 
 ![image](https://user-images.githubusercontent.com/67676029/103265625-595ac900-49f1-11eb-8bd9-536e85b62656.png)<br>
-![image](https://user-images.githubusercontent.com/67676029/103265635-5eb81380-49f1-11eb-8e87-2b1fb8ac12bf.png)
+![image](https://user-images.githubusercontent.com/67676029/103266307-aa1ef180-49f2-11eb-86d4-74f20e1b84a8.png)
 
 
 ### ※ command가 "return"일 경우, 클라이언트는 prompt를 통해 title을 입력받는다.
@@ -115,7 +120,8 @@ prompt "return-title>"에 대해 user가 아무런 입력을 하지 않았거나
 #### R16. 
 이는 서버로의 요청을 통해 이루어질 수 있다. 출력 예시는 다음과 같다. (책 목록은 title에 대해 case-insensitive한 알파벳 순으로 정렬되어있다.)
 
-![image](https://user-images.githubusercontent.com/67676029/103265669-74c5d400-49f1-11eb-9064-016a25310368.png)
+![image](https://user-images.githubusercontent.com/67676029/103266346-bc009480-49f2-11eb-8f5b-1ca5e1b6b72d.png)
+
 
 ### ※ command가 "search"일 경우, user는 prompt를 통해 string pattern을 입력받는다. 
 #### R17.
