@@ -10,11 +10,7 @@ In this project, you are going to develop a library manager program. You need to
 서버 프로그램(Server.java)는 "books.txt"라는 이름의 파일에 접근한다. "books.txt"는 library에 있는 모든 책들이 기록된 텍스트 파일이다. "books.txt" 파일의 각 줄에는 title, author, borrower의 userID가 포함된 book entry가 입력되어 있고, 이들은 각각 '\t'로 구분되어있다. tab 문자는 title, author, borrower에는 포함되지 않고, 오직 이들을 구분할 때만 쓰인다고 가정한다. 책들은 title에 대해 case-insensitive한 알파벳 순으로 정렬되어있다. "books.txt"의 예시는 다음과 같다.<br>
 
 <books.txt><br>
-A Promised Land Barack Obama  trump<br>
-Green Lights  Matthew McConaughey  -<br>
-Harry Potter and the Sorcerer's Stone J.K. Rowling  trump<br>
-How to Catch a Unicorn  Adam Wallace  joebiden<br>
-I Love You to the Moon and Back Amelia Hepworth -<br>
+![image](https://user-images.githubusercontent.com/67676029/103266456-f9652200-49f2-11eb-8a3a-d22669443f23.png)
 
 첫 줄에서, "A Promised Land"는 책의 title이다. 그 다음, tab 문자 이후에 오는 "Barack Obama"는 이 책의 author이다. 그 다음, tab 문자 이후에 오는 "trump"는 도서관에서 이 책을 빌린 borrower이다.
 
@@ -61,17 +57,8 @@ user는 자신의 userID를 입력해야한다. userID의 조건은 다음과 �
 
 만약 이러한 ID 형식을 지키지 않을 경우, 프로그램은 "UserID must be a single word with lowercase alphabets and numbers."를 출력하고, prompt를 다시 보여준다. 만약 user가 올바른 형식의 userID를 입력했을 경우, 해당 userID로 로그인된다. 이러한 경우, program은 greeting message를 출력하고, prompt를 해당 userID로 바꾼다. (예시는 다음과 같다.)
 
-ex)<br>
-Enter userID>> two words<br>
-UserID must be a single word with lowercase alphabets and numbers.<br>
-Enter userID>> Hel*o<br>
-UserID must be a single word with lowercase alphabets and numbers.<br>
-Enter userID>> <br>
-UserID must be a single word with lowercase alphabets and numbers.<br>
-Enter userID>> minseon<br>
-Hello minseon!<br>
-minseon>><br>
-
+![image](https://user-images.githubusercontent.com/67676029/103266402-d89ccc80-49f2-11eb-8845-4521d3642b65.png)<br>
+![image](https://user-images.githubusercontent.com/67676029/103266421-e5212500-49f2-11eb-877b-188365544023.png)
 
 ### ※ From now on, each requirement is on implementing a command from the client prompt. In order to implement the command, you will need to implement functions at the client as well as the server. Especially, you will need to design the message sent and received between the server and the client. Note that all the following commands are available after the user successfully logins with a user ID.
 
